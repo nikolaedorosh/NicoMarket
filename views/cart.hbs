@@ -1,0 +1,19 @@
+
+{{#each products}}
+        <div style="height:auto; width:auto; margin:20px;" class="product">
+           <div class="single-blog-item">
+                    <div class="blog-thumnail">
+                        <a href="#"><img style="height: 200px; width:200px" src="{{imgUrl}}" alt="blog-img"></a>
+                    </div>
+                    <div class="blog-content">
+                        <h4><a href="#">{{name}}</a></h4>
+                        <span>Price: {{price}} £</span><br>
+                        <span>Availability: {{amount}} items left</span><br>
+                        <span>seller {{seller.name}}</span><br>
+                        <a href=""><button class="btn btn-danger" data-name="{{name}}" class="addToCartBtn">Add to Cart</button></a><button class="btn btn-primary" name="descriptionBtn">Find More</button>
+                    </div>
+                    <span class="blog-date">{{createdAt}}</span>
+                </div>
+         </div>
+                {{/each}}
+    </div>

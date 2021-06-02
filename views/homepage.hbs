@@ -1,0 +1,40 @@
+
+{{#if id}}
+<form align="center" action="/homepage" method="POST">
+  <h5>{{name}}, add a product for sale!</h5>
+  <div align="center" class="form-group">
+    
+    <input type="text"  style="width: 150px;" class="form-control-inline" name="name" placeholder="Product">
+    <input type="text"  style="width: 150px;" class="form-control-inline" name="description" placeholder="Product Description">
+    <input type="text"  style="width: 150px;" class="form-control-inline" name="price" placeholder="Price">
+    <input type="text"  style="width: 150px;" class="form-control-inline" name="amount" placeholder="Amount">
+    <input type="text"  style="width: 150px;" class="form-control-inline" name="imgUrl" placeholder="Photo Url">
+
+  </div>
+  <button type="submit" class="btn btn-warning">Add Product</button>
+</form>
+{{#if message}}
+    <h2 class="error">{{message}}</h2>
+    {{/if}}
+{{/if}}
+<br><h4 align="center">Most recent products!</h4>
+
+    <div style="display: flex; flex-wrap:wrap; width: 100%; justify-content:space-around; align-items:flex-start;" class="parent">
+  {{#each products}}
+        <div style="height:auto; width:auto; margin:20px;" class="product" id="{{id}}">
+           <div class="single-blog-item">
+                    <div class="blog-thumnail">
+                        <a href="#"><img style="height: 200px; width:200px" src="{{imgUrl}}" alt="blog-img"></a>
+                    </div>
+                    <div class="blog-content">
+                        <h4><a href="#">{{name}}</a></h4>
+                        <span>Price: {{price}} £</span><br>
+                        <span>Availability: {{amount}} items left</span><br>
+                        <span>seller {{seller.name}}</span><br>
+                        <button class="btn btn-danger" data-name="{{name}}" id="addToCartBtn">Add to Cart</button><button class="btn btn-primary" name="descriptionBtn">Find More</button>
+                    </div>
+                    <span class="blog-date">{{createdAt}}</span>
+                </div>
+         </div>
+                {{/each}}
+    </div>

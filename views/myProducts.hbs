@@ -1,0 +1,26 @@
+<h3>   Welcome to your seller page!</h3>
+<span>   Here you can modify and/or delete your products</span>
+{{#if products}}
+<div style="display: flex; flex-wrap:wrap; width: 100%; justify-content:space-around; align-items:flex-start;" class="parent">
+  {{#each products}}
+        <div style="height:auto; width:auto; margin:20px;" class="product" id="{{id}}">
+           <div class="single-blog-item">
+                    <div class="blog-thumnail">
+                        <a href="#"><img style="height: 200px; width:200px" src="{{imgUrl}}" alt="blog-img"></a>
+                    </div>
+                    <div class="blog-content">
+                        <h4><a href="#">{{name}}</a></h4>
+                        <span>Price: {{price}} £</span><br>
+                        <span>Availability: {{amount}} items left</span><br>
+                    </div>
+                </div>
+                        <a href="/homepage/edit/{{this.id}}"><button class="btn btn-danger" id="editBtn">Edit</button></a><button class="btn btn-primary" id="deleteBtn">Delete</button>
+                    <span class="blog-date">{{createdAt}}</span>
+         </div>
+                {{/each}}
+    </div>
+{{else}}
+  <h2>Привет, {{seller.name}}</h2>
+
+  <p>Твоя корзина пока пуста...</p>
+  {{/if}}

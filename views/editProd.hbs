@@ -1,0 +1,13 @@
+<form align="center" action="/homepage/myProducts/edit/{{thisProd.id}}" method="PATCH" name="editForm" id="{{thisProd.id}}">
+  <h5>Please edit your product for sale!</h5>
+  <div align="center" class="form-group">
+    
+    <input type="text"  style="width: 150px;" class="form-control-inline" name="name" placeholder="Product" value="{{thisProd.name}}">
+    <input type="text"  value="{{thisProd.description}}" style="width: 150px;" class="form-control-inline" name="description" placeholder="Product Description">
+    <input type="text"  value="{{thisProd.price}}" style="width: 150px;" class="form-control-inline" name="price" placeholder="Price">
+    <input type="text"  value="{{thisProd.amount}}" style="width: 150px;" class="form-control-inline" name="amount" placeholder="Amount">
+    <input type="text"  value="{{thisProd.imgUrl}}" style="width: 150px;" class="form-control-inline" name="imgUrl" placeholder="Photo Url">
+
+  </div>
+  <button id="editProdBtn" type="submit" class="btn btn-warning">Add Product</button>
+</form>
